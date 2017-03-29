@@ -9,16 +9,11 @@ console.log(pendienteNuevo);
 
 function mostrarLista(){
   var nombreLista=document.getElementById("nombreLista").value;
-  var listasCreadas=document.getElementById("listasCreadas");
   var nuevaLista=document.createElement("ul");
-  var pendienteUno=document.createElement("li");
-  //pendienteUno=inputPendiente;
+  //var espacioLista=document.createElement("section");
 
   nuevaLista.value=nombreLista;
-  nuevaLista.id="nueva";
-  nuevaLista.appendChild(pendienteUno);
   listasCreadas.appendChild(nuevaLista);
-
   listasCreadas.innerText=nombreLista;
 
   agregarInput();
@@ -33,7 +28,7 @@ function botonLista(){
   var nombreBoton = document.createTextNode("Crear pendiente");
   boton.appendChild(nombreBoton);
   document.body.appendChild(boton);
-  //agregarPendiente();
+  crearPendiente();
   //nuevaLista.appendChild(boton);
 
 }
@@ -83,9 +78,22 @@ function agregarInput(){
   var inputPendiente = document.createElement("input");
   // var nombreInput = document.createElement("Tarea pendiente");
   // inputPendiente.appendChild(nombreInput);
-  inputPendiente.value="";
+  inputPendiente.id= Date.now();
   //inputPendiente.id=Date.Now();
   document.body.appendChild(inputPendiente);
   console.log(inputPendiente);
 
+}
+
+var pendientes = [];
+function crearPendiente(){
+  var pendienteNuevo=document.getElementsById(Date.now())
+  var nuevoItem=document.createElement("ul");
+  nuevoItem= pendienteNuevo
+  var inputPendiente = pendienteNuevo;
+  var pendiente = document.createElement("li");
+  pendiente=inputPendiente.id;
+  pendiente.appendChild(nuevaLista);
+  pendiente.innerText=pendiente;
+  pendientes.push(pendiente);
 }
